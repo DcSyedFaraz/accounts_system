@@ -6,7 +6,7 @@ use App\Models\Utility;
 <footer class="dash-footer">
     <div class="footer-wrapper">
         <div class="py-1">
-            <span class="text-muted">  {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright AccountGo SaaS') }} {{ date('Y') }}</span>
+            <span class="text-muted">  {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright Invoice System') }} {{ date('Y') }}</span>
         </div>
         <div class="py-1">
     {{--            <ul class="list-inline m-0">--}}

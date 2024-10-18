@@ -52,7 +52,7 @@
                     @endif
                 </li>
 
-                @if( Gate::check('manage customer proposal') )
+                {{-- @if( Gate::check('manage customer proposal') )
 
                     <li class="dash-item dash-hasmenu {{ (Request::segment(1) == 'customer.proposal' || Request::segment(1) == 'customer.retainer')?' active dash-trigger':''}}">
                         <a href="#!" class="dash-link "><span class="dash-micon"><i class="ti ti-building-bank"></i></span><span class="dash-mtext">{{__('Presale')}}</span>
@@ -73,7 +73,7 @@
                             @endcan
                         </ul>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Customer Proposal ------------}}
 
@@ -161,7 +161,7 @@
 
 
                 {{---------  Staff ------------}}
-                @if(\Auth::user()->type=='super admin')
+                {{-- @if(\Auth::user()->type=='super admin')
                     @can('manage user')
                         <li class="dash-item">
                             <a href="{{ route('users.index') }}" class="dash-link {{ (Request::route()->getName() == 'users.index' || Request::route()->getName() == 'users.create' || Request::route()->getName() == 'users.edit') ? ' active' : '' }}">
@@ -190,27 +190,27 @@
                             </ul>
                         </li>
                     @endif
-                @endif
+                @endif --}}
 
                 {{---------  Product & Service ------------}}
-                @if(Gate::check('manage product & service'))
+                {{-- @if(Gate::check('manage product & service'))
                     <li class="dash-item {{ (Request::segment(1) == 'productservice')?'active':''}} ">
                         <a href="{{ route('productservice.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-shopping-cart"></i></span>
                             <span class="dash-mtext">{{__('Product & Services')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Product & Stock ------------}}
-                @if(Gate::check('manage product & service'))
+                {{-- @if(Gate::check('manage product & service'))
                     <li class="dash-item {{ (Request::segment(1) == 'productstock')?'active':''}}">
                         <a href="{{ route('productstock.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-box"></i></span>
                             <span class="dash-mtext">{{__('Product Stock')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Customer ------------}}
                 @if(Gate::check('manage customer'))
@@ -245,7 +245,7 @@
 
                 {{---------  Presale ------------}}
 
-                @if( Gate::check('manage proposal') ||  (Gate::check('manage retainer')))
+                {{-- @if( Gate::check('manage proposal') ||  (Gate::check('manage retainer')))
 
                     <li class="dash-item dash-hasmenu {{ (Request::segment(1) == 'proposal' || Request::segment(1) == 'retainer')?' active dash-trigger':''}}">
                         <a href="#!" class="dash-link "><span class="dash-micon"><i class="ti ti-building-bank"></i></span><span class="dash-mtext">{{__('Presale')}}</span>
@@ -266,7 +266,7 @@
                                 @endcan
                         </ul>
                     </li>
-                @endif
+                @endif --}}
 
 
                 {{---------  Banking ------------}}
@@ -298,11 +298,11 @@
                             <span class="dash-arrow"><i data-feather="chevron-right"></i></span>
                         </a>
                         <ul class="dash-submenu {{ (Request::segment(1) == 'invoice' || Request::segment(1) == 'revenue' || Request::segment(1) == 'credit-note')?'show':''}}">
-                            @can('manage invoice')
+                            {{-- @can('manage invoice')
                                 <li class="dash-item {{ (Request::route()->getName() == 'invoice.index' || Request::route()->getName() == 'invoice.create' || Request::route()->getName() == 'invoice.edit' || Request::route()->getName() == 'invoice.show') ? ' active' : '' }}">
                                     <a class="dash-link" href="{{ route('invoice.index') }}">{{__('Invoice')}}</a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('manage revenue')
                                 <li class="dash-item {{ (Request::route()->getName() == 'revenue.index' || Request::route()->getName() == 'revenue.create' || Request::route()->getName() == 'revenue.edit') ? ' active' : '' }}">
                                     <a class="dash-link" href="{{route('revenue.index')}}">{{ __('Revenue') }}</a>
@@ -381,18 +381,18 @@
                 @endif
 
                 {{---------  Budget Planner ------------}}
-                @if(\Auth::user()->type =='company')
+                {{-- @if(\Auth::user()->type =='company')
                     <li class="dash-item {{ (Request::segment(1) == 'budget')?'active':''}}">
                         <a href="{{ route('budget.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-businessplan"></i></span>
                             <span class="dash-mtext">{{__('Budget Planner')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Contract ------------}}
 
-                @if(Gate::check('manage contract'))
+                {{-- @if(Gate::check('manage contract'))
                     <li class="dash-item {{ (Request::segment(1) == 'contract')?'active':''}}">
                         <a href="{{ route('contract.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-businessplan"></i></span>
@@ -408,17 +408,17 @@
                             <span class="dash-mtext">{{__('Contract')}}</span>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
 
                 {{---------  Goal------------}}
-                @if(Gate::check('manage goal'))
+                {{-- @if(Gate::check('manage goal'))
                     <li class="dash-item {{ (Request::segment(1) == 'goal')?'active':''}}">
                         <a href="{{ route('goal.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-target"></i></span>
                             <span class="dash-mtext">{{__('Goal')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Asset ------------}}
                 @if(Gate::check('manage assets'))
@@ -431,14 +431,14 @@
                 @endif
 
                 {{---------  Plan------------}}
-                @if(Gate::check('manage plan'))
+                {{-- @if(Gate::check('manage plan'))
                     <li class="dash-item {{ Request::segment(1) == 'plans' || Request::segment(1) == 'stripe'   ?'active':''}}">
                         <a href="{{ route('plans.index') }}" class="dash-link  ">
                             <span class="dash-micon"><i class="ti ti-trophy"></i></span>
                             <span class="dash-mtext">{{__('Plan')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Plan Request------------}}
                 @if(\Auth::user()->type=='super admin')
@@ -461,14 +461,14 @@
                 @endif
 
                 {{---------  Order ------------}}
-                @if(Gate::check('manage order'))
+                {{-- @if(Gate::check('manage order'))
                     <li class="dash-item {{ (Request::segment(1) == 'order')?'active':''}}">
                         <a href="{{ route('order.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-shopping-cart-plus"></i></span>
                             <span class="dash-mtext">{{__('Order')}}</span>
                         </a>
                     </li>
-                @endif
+                @endif --}}
 
                 {{---------  Email Notification ------------}}
 
@@ -569,19 +569,19 @@
                                     <a class="dash-link" href="{{route('product-category.index')}}">{{ __('Category') }}</a>
                                 </li>
                             @endcan
-                            @can('manage constant unit')
+                            {{-- @can('manage constant unit')
                                 <li class="dash-item {{ (Request::route()->getName() == 'product-unit.index' ) ? ' active' : '' }}">
                                     <a class="dash-link" href="{{route('product-unit.index')}}">{{ __('Unit') }}</a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('manage constant custom field')
                                 <li class="dash-item {{ (Request::route()->getName() == 'custom-field.index' ) ? 'active' : '' }}">
                                     <a class="dash-link" href="{{route('custom-field.index')}}">{{ __('Custom Field') }}</a>
                                 </li>
                             @endcan
-                                <li class="dash-item {{ (Request::route()->getName() == 'contractType.index' ) ? 'active' : '' }}">
+                                {{-- <li class="dash-item {{ (Request::route()->getName() == 'contractType.index' ) ? 'active' : '' }}">
                                     <a class="dash-link" href="{{route('contractType.index')}}">{{ __('Contract Type') }}</a>
-                                </li>
+                                </li> --}}
                         </ul>
                     </li>
                 @endif
