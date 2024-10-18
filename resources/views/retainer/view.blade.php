@@ -479,7 +479,7 @@
                                         <strong>{{ __('Billed To') }} :</strong><br>
                                         {{!empty($customer->billing_name)?$customer->billing_name:''}}<br>
                                         {{!empty($customer->billing_address)?$customer->billing_address:''}}<br>
-                                        {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:'',', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
+                                        {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:''.', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
                                         {{!empty($customer->billing_country)?$customer->billing_country:''}}<br>
                                         {{!empty($customer->billing_phone)?$customer->billing_phone:''}}<br>
                                         @if (App\Models\Utility::getValByName('tax_number') == 'on')
@@ -1362,7 +1362,7 @@
                                                                 'currency' => 'currency',
                                                             ];
                                                             session()->put('skrill_data', $skrill_data);
-                                                            
+
                                                         @endphp
                                                         <!-- <div class="form-group mt-3">
                                                                 <input type="submit" id="pay_with_skrill" value="{{ __('Make Payment') }}" class="btn btn-sm btn-primary rounded-pill">

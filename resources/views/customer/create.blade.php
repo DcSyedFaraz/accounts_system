@@ -56,10 +56,11 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="form-group">
-                {{Form::label('billing_name',__('Name'),array('class'=>'','class'=>'form-label')) }}
+                {{ Form::label('billing_name', __('Name'), ['class' => 'form-label']) }}
                 <div class="form-icon-user">
-                    {{Form::text('billing_name',null,array('class'=>'form-control'))}}
+                    {{ Form::text('billing_name', null, ['class' => 'form-control']) }}
                 </div>
+
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">

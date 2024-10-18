@@ -161,7 +161,7 @@
                                             <strong>{{__('Billed To')}} :</strong><br>
                                             {{!empty($customer->billing_name)?$customer->billing_name:''}}<br>
                                             {{!empty($customer->billing_address)?$customer->billing_address:''}}<br>
-                                            {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:'',', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
+                                            {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:''.', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
                                             {{!empty($customer->billing_country)?$customer->billing_country:''}}<br>
                                             {{!empty($customer->billing_phone)?$customer->billing_phone:''}}<br>
                                         </small>
@@ -176,7 +176,7 @@
                                             {{!empty($customer->shipping_address)?$customer->shipping_address:''}}<br>
                                             {{!empty($customer->shipping_city)?$customer->shipping_city:'' . ', '}}, {{!empty($customer->shipping_state)?$customer->shipping_state:'' .', '}} {{!empty($customer->shipping_zip)?$customer->shipping_zip:''}}<br>
                                             {{!empty($customer->shipping_country)?$customer->shipping_country:''}}<br>
-                                            {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>  
+                                            {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>
                                         </small>
                                     </div>
                                 @endif
@@ -270,9 +270,9 @@
                                                     <td>{{$iteam->quantity}}</td>
                                                     <td>{{utility::priceFormat($company_setting,$iteam->price)}}</td>
                                                     <td>
-                                                       
+
                                                             {{utility::priceFormat($company_setting,$iteam->discount)}}
-                                                        
+
                                                     </td>
                                                     <td>
                                                         @if(!empty($iteam->tax))
@@ -293,7 +293,7 @@
                                                             -
                                                         @endif
                                                     </td>
-                                                    
+
                                                     <td>{{!empty($iteam->description)?$iteam->description:'-'}}</td>
                                                     <td class="text-end">{{utility::priceFormat($company_setting,($iteam->price*$iteam->quantity))}}</td>
                                                 </tr>
@@ -311,9 +311,9 @@
                                                 {{-- <td><b>{{$totalQuantity}}</b></td>
                                                 <td><b>{{utility::priceFormat($company_setting,$totalRate)}}</b></td>
                                                 <td>
-                                                    
+
                                                     <b>{{utility::priceFormat($company_setting,$totalDiscount)}}</b>
-                                                    
+
                                                 </td>
                                                 <td><b>{{utility::priceFormat($company_setting,$totalTaxPrice)}}</b></td> --}}
                                                 <td></td>
@@ -324,13 +324,13 @@
                                                 <td class="text-end"><b>{{__('Sub Total')}}</b></td>
                                                 <td class="text-end">{{utility::priceFormat($company_setting,$proposal->getSubTotal())}}</td>
                                             </tr>
-                                            
+
                                             <tr>
                                                 <td colspan="6"></td>
                                                 <td class="text-end"><b>{{__('Discount')}}</b></td>
                                                 <td class="text-end">{{utility::priceFormat($company_setting,$proposal->getTotalDiscount())}}</td>
                                             </tr>
-                                            
+
                                             {{-- @if(!empty($taxesData))
                                                 @foreach($taxesData as $taxName => $taxPrice)
                                                     <tr>
@@ -355,7 +355,7 @@
                                                             <td class="text-end">{{$user->priceFormat($taxPrice)}}</td>
                                                         {{-- <td class="text-end"><b>{{$taxName}}</b></td>
                                                         <td class="text-end">{{ \Auth::user()->priceFormat($taxPrice) }}</td> --}}
-                                                    </tr>   
+                                                    </tr>
                                                 @endforeach
                                             @endif
                                             <tr>

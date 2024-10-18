@@ -1,6 +1,6 @@
 @php
     $settings_data = \App\Models\Utility::settingsById($proposal->created_by);
-    
+
 @endphp
 <!DOCTYPE html>
 <html lang="en" dir="{{ $settings_data['SITE_RTL'] == 'on' ? 'rtl' : '' }}">
@@ -294,7 +294,7 @@
                                 {{ !empty($customer->billing_phone) ? $customer->billing_phone : '' }}<br>
                                 {{ !empty($customer->billing_address) ? $customer->billing_address : '' }}<br>
                                 {{ !empty($customer->billing_city) ? $customer->billing_city : '' . ', ' }},
-                                {{ !empty($customer->billing_state) ? $customer->billing_state : '', ', ' }},
+                                {{ !empty($customer->billing_state) ? $customer->billing_state : ''. ', ' }},
                                 {{ !empty($customer->billing_country) ? $customer->billing_country : '' }}<br>
                                 {{ !empty($customer->billing_zip) ? $customer->billing_zip : '' }}<br>
                             </p>

@@ -125,7 +125,7 @@
                                                 <strong>{{ __('Billed To') }} :</strong><br>
                                             {{!empty($vendor->billing_name)?$vendor->billing_name:''}}<br>
                                             {{!empty($vendor->billing_address)?$vendor->billing_address:''}}<br>
-                                            {{!empty($vendor->billing_city)?$vendor->billing_city:'' .', '}}, {{!empty($vendor->billing_state)?$vendor->billing_state:'',', '}} {{!empty($vendor->billing_zip)?$vendor->billing_zip:''}}<br>
+                                            {{!empty($vendor->billing_city)?$vendor->billing_city:'' .', '}}, {{!empty($vendor->billing_state)?$vendor->billing_state:''.', '}} {{!empty($vendor->billing_zip)?$vendor->billing_zip:''}}<br>
                                             {{!empty($vendor->billing_country)?$vendor->billing_country:''}}<br>
                                             {{!empty($vendor->billing_phone)?$vendor->billing_phone:''}}<br>
                                                 @if (App\Models\Utility::getValByName('tax_number') == 'on')
@@ -149,7 +149,7 @@
                                                     <strong>{{ __('Tax Number ') }} :
                                                     </strong>{{ !empty($vendor->tax_number) ? $vendor->tax_number : '' }}
                                                 @endif
-                                                    
+
                                             </small>
                                         </div>
                                     @endif

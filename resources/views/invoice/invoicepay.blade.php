@@ -167,7 +167,7 @@
             }).submit();
             });
         @endif
-        
+
         @if(isset($company_payment_setting['razorpay_public_key']))
         // Razorpay Payment
         $(document).on("click", "#pay_with_razorpay", function () {
@@ -324,7 +324,7 @@
                     <a href="{{ route('invoice.pdf', Crypt::encrypt($invoice->id)) }}" target="_blank" class="btn btn-primary">{{ __('Download') }}</a>
                     @if ($invoice->getDue() > 0)
                         @if(\Auth::guard('customer')->check())
-                        
+
                             {{-- <a href="#" data-toggle="modal" data-target="#paymentModal"
                                 class="btn btn-primary">
                                 <span class="btn-inner--icon text-white"><i class="fa fa-credit-card"></i></span>
@@ -395,7 +395,7 @@
                                             <strong>{{ __('Billed To') }} :</strong><br>
                                             {{!empty($customer->billing_name)?$customer->billing_name:''}}<br>
                                             {{!empty($customer->billing_address)?$customer->billing_address:''}}<br>
-                                            {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:'',', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
+                                            {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}}, {{!empty($customer->billing_state)?$customer->billing_state:''.', '}} {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
                                             {{!empty($customer->billing_country)?$customer->billing_country:''}}<br>
                                             {{!empty($customer->billing_phone)?$customer->billing_phone:''}}<br>
                                         </small>
@@ -409,7 +409,7 @@
                                             {{!empty($customer->shipping_address)?$customer->shipping_address:''}}<br>
                                             {{!empty($customer->shipping_city)?$customer->shipping_city:'' . ', '}}, {{!empty($customer->shipping_state)?$customer->shipping_state:'' .', '}} {{!empty($customer->shipping_zip)?$customer->shipping_zip:''}}<br>
                                             {{!empty($customer->shipping_country)?$customer->shipping_country:''}}<br>
-                                            {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>  
+                                            {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>
                                         </small>
                                     </div>
                                 @endif
@@ -507,7 +507,7 @@
                                                     <td>{{ $iteam->quantity }}</td>
                                                     <td>{{ Utility::priceFormat($company_setting, $iteam->price) }}</td>
                                                     <td>{{ Utility::priceFormat($company_setting, $iteam->discount) }}</td>
-                                                    
+
                                                     {{-- <td>
 
                                                         @if (!empty($iteam->tax))
@@ -554,7 +554,7 @@
                                                             -
                                                         @endif
                                                     </td>
-                                                    
+
                                                     <td>{{ !empty($iteam->description) ? $iteam->description : '-' }}</td>
                                                     <td class="text-end">
                                                         {{ Utility::priceFormat($company_setting, $iteam->price * $iteam->quantity) }}

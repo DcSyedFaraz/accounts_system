@@ -1,6 +1,6 @@
 @php
     $settings_data = \App\Models\Utility::settingsById($bill->created_by);
-    
+
 @endphp
 
 <!DOCTYPE html>
@@ -290,7 +290,7 @@
                                 {{ !empty($vendor->billing_phone) ? $vendor->billing_phone : '' }}<br>
                                 {{ !empty($vendor->billing_address) ? $vendor->billing_address : '' }}<br>
                                 {{ !empty($vendor->billing_city) ? $vendor->billing_city : '' . ', ' }},
-                                {{ !empty($vendor->billing_state) ? $vendor->billing_state : '', ', ' }},
+                                {{ !empty($vendor->billing_state) ? $vendor->billing_state : ''. ', ' }},
                                 {{ !empty($vendor->billing_country) ? $vendor->billing_country : '' }}<br>
                                 {{ !empty($vendor->billing_zip) ? $vendor->billing_zip : '' }}<br>
                             </p>

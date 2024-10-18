@@ -184,7 +184,7 @@
                                             <strong>{{__('Billed To')}} :</strong><br>
                                             {{!empty($vendor->billing_name)?$vendor->billing_name:''}}<br>
                                             {{!empty($vendor->billing_address)?$vendor->billing_address:''}}<br>
-                                            {{!empty($vendor->billing_city)?$vendor->billing_city:'' .', '}}, {{!empty($vendor->billing_state)?$vendor->billing_state:'',', '}} {{!empty($vendor->billing_zip)?$vendor->billing_zip:''}}<br>
+                                            {{!empty($vendor->billing_city)?$vendor->billing_city:'' .', '}}, {{!empty($vendor->billing_state)?$vendor->billing_state:''.', '}} {{!empty($vendor->billing_zip)?$vendor->billing_zip:''}}<br>
                                             {{!empty($vendor->billing_country)?$vendor->billing_country:''}}<br>
                                             {{!empty($vendor->billing_phone)?$vendor->billing_phone:''}}<br>
                                         </small>
@@ -196,7 +196,7 @@
                                             <strong>{{__('Shipped To')}} :</strong><br>
                                             {{!empty($vendor->shipping_name)?$vendor->shipping_name:''}}<br>
                                             {{!empty($vendor->shipping_address)?$vendor->shipping_address:''}}<br>
-                                            {{!empty($vendor->shipping_city)?$vendor->shipping_city:'' .', '}}, {{!empty($vendor->shipping_state)?$vendor->shipping_state:'',', '}} {{!empty($vendor->shipping_zip)?$vendor->shipping_zip:''}}<br>
+                                            {{!empty($vendor->shipping_city)?$vendor->shipping_city:'' .', '}}, {{!empty($vendor->shipping_state)?$vendor->shipping_state:''.', '}} {{!empty($vendor->shipping_zip)?$vendor->shipping_zip:''}}<br>
                                             {{!empty($vendor->shipping_country)?$vendor->shipping_country:''}}<br>
                                             {{!empty($vendor->shipping_phone)?$vendor->shipping_phone:''}}<br>
                                         </small>
@@ -251,9 +251,9 @@
                                                 <th class="text-dark">{{__('Product')}}</th>
                                                 <th class="text-dark">{{__('Quantity')}}</th>
                                                 <th class="text-dark">{{__('Rate')}}</th>
-                                                <th class="text-dark">  
+                                                <th class="text-dark">
                                                         {{__('Discount')}}
-                                                    
+
                                                 </th>
                                                 <th class="text-dark">{{__('Tax')}}</th>
                                                 <th class="text-dark">{{__('Description')}}</th>
@@ -295,9 +295,9 @@
                                                     <td>{{$iteam->quantity}}</td>
                                                     <td>{{utility::priceFormat($company_setting,$iteam->price)}}</td>
 
-                                                    <td>  
+                                                    <td>
                                                         {{utility::priceFormat($company_setting,$iteam->discount)}}
-                                                    
+
                                                     </td>
 
                                                     <td>
@@ -319,7 +319,7 @@
                                                             -
                                                         @endif
                                                     </td>
-                                                 
+
                                                     <td>{{!empty($iteam->description)?$iteam->description:'-'}}</td>
                                                     <td class="text-end">{{utility::priceFormat($company_setting,($iteam->price*$iteam->quantity))}}</td>
                                                 </tr>
@@ -330,9 +330,9 @@
                                                 <td><b>{{__('Total')}}</b></td>
                                                 <td><b>{{$totalQuantity}}</b></td>
                                                 <td><b>{{utility::priceFormat($company_setting,$totalRate)}}</b></td>
-                                                <td> 
+                                                <td>
                                                         <b>{{utility::priceFormat($company_setting,$totalDiscount)}}</b>
-                                                    
+
                                                 </td>
                                                 <td><b>{{utility::priceFormat($company_setting,$totalTaxPrice)}}</b></td>
                                             </tr>
@@ -341,13 +341,13 @@
                                                 <td class="text-end"><b>{{__('Sub Total')}}</b></td>
                                                 <td class="text-end">{{utility::priceFormat($company_setting,$bill->getSubTotal())}}</td>
                                             </tr>
-                                            
+
                                                 <tr>
                                                     <td colspan="6"></td>
                                                     <td class="text-end"><b>{{__('Discount')}}</b></td>
                                                     <td class="text-end">{{utility::priceFormat($company_setting,$bill->getTotalDiscount())}}</td>
                                                 </tr>
-                                            
+
                                             @if(!empty($taxesData))
                                                 @foreach($taxesData as $taxName => $taxPrice)
                                                     <tr>
