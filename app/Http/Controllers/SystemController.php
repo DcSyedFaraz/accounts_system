@@ -29,7 +29,7 @@ class SystemController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         if (\Auth::user()->can('manage system settings')) {
             if ($request->logo_dark) {
                 $request->validate(
