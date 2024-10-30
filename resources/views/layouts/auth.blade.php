@@ -63,7 +63,7 @@
             <div class="container-fluid pe-2">
                 <a class="navbar-brand" href="#">
                     <img src="{{ $logo . (isset($company_logo) && !empty($company_logo) ? $company_logo : 'logo-dark.png') }}"
-                    alt="{{ config('app.name', 'AccountGo') }}" class="logo logo-lg w-25">
+                    alt="{{ config('app.name', 'AccountGo') }}" style="width: 90px;" class="logo logo-lg w-25">
                 </a>
                 <button
                     class="navbar-toggler"
