@@ -193,14 +193,14 @@
                 @endif --}}
 
                 {{---------  Product & Service ------------}}
-                {{-- @if(Gate::check('manage product & service'))
+                @if(Gate::check('manage product & service'))
                     <li class="dash-item {{ (Request::segment(1) == 'productservice')?'active':''}} ">
                         <a href="{{ route('productservice.index') }}" class="dash-link ">
                             <span class="dash-micon"><i class="ti ti-shopping-cart"></i></span>
                             <span class="dash-mtext">{{__('Product & Services')}}</span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 {{---------  Product & Stock ------------}}
                 {{-- @if(Gate::check('manage product & service'))
@@ -569,11 +569,11 @@
                                     <a class="dash-link" href="{{route('product-category.index')}}">{{ __('Category') }}</a>
                                 </li>
                             @endcan
-                            {{-- @can('manage constant unit')
+                            @can('manage constant unit')
                                 <li class="dash-item {{ (Request::route()->getName() == 'product-unit.index' ) ? ' active' : '' }}">
                                     <a class="dash-link" href="{{route('product-unit.index')}}">{{ __('Unit') }}</a>
                                 </li>
-                            @endcan --}}
+                            @endcan
                             @can('manage constant custom field')
                                 <li class="dash-item {{ (Request::route()->getName() == 'custom-field.index' ) ? 'active' : '' }}">
                                     <a class="dash-link" href="{{route('custom-field.index')}}">{{ __('Custom Field') }}</a>
